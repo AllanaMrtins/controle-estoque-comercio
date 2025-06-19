@@ -107,6 +107,13 @@ int cadastrarItem(int id[], char nome[][50], float preco[], int quantidade[], in
     scanf("%d", &quantidade[total_de_produtos]);
     limparBuffer();
 
+     if(quantidade[total_de_produtos] < 0){
+        limparTela();
+        printf("ERRO: a quantidade não pode ser negativa!\n");
+        pequenaPausa();
+        return 0;
+    }
+
     limparTela();
     printf("Produto adicionado com sucesso!\n");
     pequenaPausa();
